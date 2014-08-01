@@ -8,8 +8,7 @@ class FieldsLabelsMixin(object):
     Добавляет метод получения словаря подписей (verbose_name) всех полей модели.
     '''
     def get_field_labels(self):
-        labels = dict([(f.name, f.verbose_name) for f in self._meta.fields])
-        return dict(labels)
+        return dict([(f.name, f.verbose_name) for f in self._meta.fields])
 
 
 class Dictionary(models.Model):
