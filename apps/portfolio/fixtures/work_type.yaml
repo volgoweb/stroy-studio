@@ -1,0 +1,29 @@
+- model: portfolio.worktype
+  pk: 1
+  fields:
+    title: Строительство дома под ключ
+
+- model: portfolio.worktype
+  pk: 2
+  fields:
+    title: Строительство бани под ключ
+
+- model: portfolio.worktype
+  pk: 3
+  fields:
+    title: Возведение фундамента
+
+- model: portfolio.worktype
+  pk: 4
+  fields:
+    title: Проведение коммуникаций
+
+- model: portfolio.worktype
+  pk: 5
+  fields:
+    title: Отделочные работы
+
+- model: portfolio.worktype
+  pk: 6
+  fields:
+    title: Ремонт помещения

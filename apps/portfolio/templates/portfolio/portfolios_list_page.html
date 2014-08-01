@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_title %}Портфолио{% endblock %}
+
+{% block content %}
+    {% if filters_form %}
+        {% include "portfolio/filters_form__base.html" with filters_form=filters_form %}
+    {% endif %}
+
+    {% include "theme_framework_dk/list/grid/simple.html" with cols=3 item_template="theme_framework_dk/detail/all_centered__img_top.html" items=models list_class="residences" item_class="residences__item" item_head_template="theme_framework_dk/detail/item__head.html" item_body_template="theme_framework_dk/detail/item__body.html" %}
+
+    {% if is_paginated %}
+        {% include "theme_framework_dk/pagination/bootstrap1/pagination.html" with paginator=page_obj%}
+    {% endif %}
+{% endblock %}
+

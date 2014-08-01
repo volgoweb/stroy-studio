@@ -1,0 +1,34 @@
+- model: building.constructiontype
+  pk: brick
+  fields:
+    title: Кирпичный
+
+- model: building.constructiontype
+  pk: foamed_contrete
+  fields:
+    title: Пенобетонный
+
+- model: building.constructiontype
+  pk: gas_contrete
+  fields:
+    title: Газобетонный
+
+- model: building.constructiontype
+  pk: frame
+  fields:
+    title: Каркасный
+
+- model: building.constructiontype
+  pk: timber
+  fields:
+    title: Деревянный из бруса
+
+- model: building.constructiontype
+  pk: profile_timber
+  fields:
+    title: Деревянный из профилированного бруса
+
+- model: building.constructiontype
+  pk: roundwood
+  fields:
+    title: Деревянный из бревен

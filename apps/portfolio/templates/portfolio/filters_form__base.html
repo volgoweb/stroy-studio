@@ -1,0 +1,14 @@
+
+{% if filters_form %}
+    <form class="filters-form" method="GET" accept-charset="utf-8">
+        {% block filters_form_fields %}
+            <div class="filters-form__item">
+                <label class="filters-form-item__label">{{ filters_form.work_type.label }}:</label>
+                <span class="filters-form-item__field">{{ filters_form.work_type }}</span>
+            </div>
+        {% endblock %}
+        
+        <input class="btn btn-success" type="submit" value="Показать"/>
+        <a class="btn btn-default btn-sm btn-reset" href="{% url "portfolio__portfolios_list_page" %}">Сбросить</a>
+    </form>
+{% endif %}

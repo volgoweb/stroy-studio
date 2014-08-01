@@ -1,0 +1,62 @@
+- model: building.building
+  # pk: 1
+  fields:
+    title: Кирпичный дом
+    create_date: 2014-07-31 09:00:00
+    update_date: 2014-07-31 09:00:00
+    desc: Описание дома
+    main_img: images/kirpichniy_dom.jpg
+    construction_type: brick
+    total_area: 80
+    length: 8
+    width: 7
+    foundation: perimetr
+    external_wall: красный кирпич 30см
+    roof_covering: metall_decking
+    price: 900000
+    old_price: 800000
+    sale: 4
+    view_count: 2
+    buy_count: 0
+
+- model: building.building
+  # pk: 2
+  fields:
+    title: Каркасный дом
+    create_date: 2014-07-31 09:00:00
+    update_date: 2014-07-31 09:00:00
+    desc: Описание дома
+    main_img: images/karkasniy_dom.jpg
+    construction_type: frame
+    total_area: 90
+    length: 7
+    width: 7
+    foundation: boring_piles
+    external_wall: сэндвич-панели
+    roof_covering: metall_decking
+    price: 900000
+    old_price: 800000
+    sale: 4
+    view_count: 2
+    buy_count: 0
+
+- model: building.building
+  # pk: 3
+  fields:
+    title: Дом из бруса
+    create_date: 2014-07-31 09:00:00
+    update_date: 2014-07-31 09:00:00
+    desc: Описание дома
+    main_img: images/dom_from_brus.jpg
+    construction_type: timber
+    total_area: 50
+    length: 6
+    width: 6
+    foundation: plate
+    external_wall: сэндвич-панели
+    roof_covering: metall_decking
+    price: 700000
+    old_price: 700000
+    sale: 3
+    view_count: 12
+    buy_count: 2

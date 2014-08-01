@@ -1,0 +1,29 @@
+- model: building.roofcovering
+  pk: metall_decking
+  fields:
+    title: Профнастил
+
+- model: building.roofcovering
+  pk: metall_tile
+  fields:
+    title: Металлочерепица
+
+- model: building.roofcovering
+  pk: shingle
+  fields:
+    title: Гибкая черепица
+
+- model: building.roofcovering
+  pk: asbestos
+  fields:
+    title: Шифер
+
+- model: building.roofcovering
+  pk: rubberoid
+  fields:
+    title: Рубероид
+
+- model: building.roofcovering
+  pk: onduline
+  fields:
+    title: Ондулин

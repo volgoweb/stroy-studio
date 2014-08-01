@@ -1,0 +1,39 @@
+- model: building.foundation
+  pk: perimetr
+  fields:
+    title: Ленточный
+
+- model: building.foundation
+  pk: post
+  fields:
+    title: Столбчатый
+
+- model: building.foundation
+  pk: plate
+  fields:
+    title: Плита
+
+- model: building.foundation
+  pk: sweden_plate
+  fields:
+    title: Утепленная шведская плита
+
+- model: building.foundation
+  pk: pile
+  fields:
+    title: Свайный
+
+- model: building.foundation
+  pk: tise
+  fields:
+    title: ТИСЭ
+
+- model: building.foundation
+  pk: driving_piles
+  fields:
+    title: Забивные сваи
+
+- model: building.foundation
+  pk: boring_piles
+  fields:
+    title: Винтовые сваи

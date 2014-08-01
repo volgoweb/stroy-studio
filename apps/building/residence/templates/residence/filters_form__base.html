@@ -1,0 +1,24 @@
+{% extends "building/filters_form__base.html" %}
+
+{% block filters_form_fields %}
+    {{ block.super }}
+
+    <div class="filters-form__item">
+        <label class="filters-form-item__label">{{ filters_form.floors_count.label }}:</label>
+        <span class="filters-form-item__field">{{ filters_form.floors_count }}</span>
+    </div>
+
+    <div class="filters-form__fieldset">
+        <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.living_area }}:</label>
+        <div class="filters-form__item inline-item">
+            <label class="filters-form-item__label">{{ filters_form.living_area_lt.label }}</label>
+            <span class="filters-form-item__field">{{ filters_form.living_area_lt }}</span>
+        </div>
+        <div class="filters-form__item inline-item">
+            <label class="filters-form-item__label">{{ filters_form.living_area_gt.label }}</label>
+            <span class="filters-form-item__field">{{ filters_form.living_area_gt }}</span>
+        </div>
+    </div>
+{% endblock %}
+
+{% block reset_button_href %}{% url "residence__residences_list_page" %}{% endblock %}

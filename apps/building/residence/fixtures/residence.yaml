@@ -1,0 +1,27 @@
+- model: residence.residence
+  pk: 1
+  fields:
+    building_ptr: 1
+    living_area: 80
+    floors_count: 1
+    interior_wall: гипсокартон
+    floor_desk: ж.б. плиты
+
+- model: residence.residence
+  pk: 2
+  fields:
+    building_ptr: 2
+    living_area: 80
+    floors_count: 2
+    interior_wall: гипсокартон
+    floor_desk: деревянное
+
+- model: residence.residence
+  pk: 3
+  fields:
+    building_ptr: 3
+    living_area: 40
+    floors_count: 2
+    interior_wall: гипсокартон
+    floor_desk: деревянное
+
