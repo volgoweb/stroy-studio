@@ -5,5 +5,5 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
-    url(r'^(?P<slug>[^/]+)/$', 'page.views.page', name='page__page'),
+    url(r'^(?P<slug>[^/]+)/$', 'main.page.views.page', name='page__page'),
 )

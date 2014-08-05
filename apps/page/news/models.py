@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from page.models import Page
-from helper.models import *
+from main.page.models import Page
+from main.helper.models import *
 
 class News(Page, DateField):
     class Meta():

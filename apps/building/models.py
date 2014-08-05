@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from helper.models import *
-# from autoslug import AutoSlugField
+from main.helper.models import *
 from django.conf import settings
 
 class ConstructionType(Dictionary):
@@ -34,7 +33,7 @@ class Building(EntityBaseFields, MainImageField, DescField):
         verbose_name = u'Картинки',
         blank        = True,
         null         = True,
-        related_name = 'building__images',
+        related_name = 'building--images',
     )
 
     planning_schemes = models.ManyToManyField(
@@ -42,13 +41,13 @@ class Building(EntityBaseFields, MainImageField, DescField):
         verbose_name = u'Схемы планировки',
         blank        = True,
         null         = True,
-        related_name = 'building__planning_schemes',
+        related_name = 'building--planning_schemes',
     )
 
     construction_type = models.ForeignKey(
         ConstructionType,
         verbose_name = u'Тип конструкции',
-        related_name = 'building__construction_type',
+        related_name = 'building--construction_type',
     )
 
     total_area = models.IntegerField(
@@ -66,7 +65,7 @@ class Building(EntityBaseFields, MainImageField, DescField):
     foundation = models.ForeignKey(
         Foundation,
         verbose_name = u'Тип фундамента',
-        related_name = 'building__foundation',
+        related_name = 'building--foundation',
         blank        = True,
         null         = True,
     )
@@ -81,7 +80,7 @@ class Building(EntityBaseFields, MainImageField, DescField):
     roof_covering = models.ForeignKey(
         RoofCovering,
         verbose_name = u'Кровельное покрытие',
-        related_name = 'building__roof_covering',
+        related_name = 'building--roof_covering',
         blank        = True,
         null         = True,
     )

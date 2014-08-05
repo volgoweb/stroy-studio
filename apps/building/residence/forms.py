@@ -2,7 +2,7 @@
 from django import forms
 from .models import Residence
 from constance import config
-from building.forms import BuildingFilters
+from main.building.forms import BuildingFilters
 
 class ResidenceFilters(BuildingFilters):
     floors_count = forms.IntegerField(

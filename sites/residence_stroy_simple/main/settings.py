@@ -30,7 +30,7 @@ TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
-    os.path.join(PROJECT_DIR, 'residence', 'templates'),
+    # os.path.join(PROJECT_DIR, 'residence', 'templates'),
 )
 
 ALLOWED_HOSTS = ['127.0.0.1']
@@ -56,14 +56,13 @@ INSTALLED_APPS = (
     'autoslug',
     'constance',
     'constance.backends.database',
-    'dk_tpl_extentions',
 
-    'helper',
-    'building',
-    'building.residence',
-    'page',
-    'page.article',
-    'portfolio',
+    'main.dk_tpl_extentions',
+    'main.helper',
+    'main.theme_framework_dk',
+    'main.building',
+    'main.page',
+    'main.portfolio',
 )
 
 MIDDLEWARE_CLASSES = (

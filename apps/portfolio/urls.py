@@ -7,5 +7,5 @@ from .views import PortfoliosList
 
 urlpatterns = patterns('',
     url(r'^$', PortfoliosList.as_view(), name='portfolio__portfolios_list_page'),
-    url(r'^(?P<slug>[^/]+)/$', 'portfolio.views.portfolio_detail_page', name='portfolio__portfolio_detail_page'),
+    url(r'^(?P<slug>[^/]+)/$', 'main.portfolio.views.portfolio_detail_page', name='portfolio__portfolio_detail_page'),
 )

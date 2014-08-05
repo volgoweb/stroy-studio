@@ -14,9 +14,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', 'main.views.front_page', name='main__front_page'),
-    url(r'^buildings/', include('building.urls')),
-    url(r'^page/', include('page.urls')),
-    url(r'^portfolio/', include('portfolio.urls')),
+    url(r'^buildings/', include('main.building.urls')),
+    url(r'^page/', include('main.page.urls')),
+    url(r'^portfolio/', include('main.portfolio.urls')),
 )
 
 if settings.DEBUG:

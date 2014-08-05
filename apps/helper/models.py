@@ -10,7 +10,6 @@ class FieldsLabelsMixin(object):
     def get_field_labels(self):
         return dict([(f.name, f.verbose_name) for f in self._meta.fields])
 
-
 class Dictionary(models.Model):
     '''
     Абстрактная модель для всех моделей-словарей.
@@ -60,6 +59,7 @@ class EntityBaseFields(models.Model, FieldsLabelsMixin):
     )
 
     slug  = AutoSlugField(
+        populate_from = 'title',
         unique_with   = ('id', 'title'),
         always_update = True,
         editable      = True,

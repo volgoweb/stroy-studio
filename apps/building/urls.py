@@ -8,7 +8,7 @@ from .views import BuildingsList
 urlpatterns = patterns('',
     # url(r'^$', 'building.views.buildings_page', name='building__residences_page'),
     url(r'^$', BuildingsList.as_view(), name='building__buildings_list_page'),
-    url(r'^(?P<pk>\d+)/$', 'building.views.building_detail_page', name='building__building_detail_page'),
+    url(r'^(?P<pk>\d+)/$', 'main.building.views.building_detail_page', name='building__building_detail_page'),
 
-    url(r'^residences/', include('building.residence.urls')),
+    url(r'^residences/', include('main.building.residence.urls')),
 )

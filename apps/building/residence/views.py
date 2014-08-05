@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 from .models import *
-from helper.utils import add_pagingation
+from main.helper.utils import add_pagingation
 from .models import Residence
 from .forms import ResidenceFilters
-from building.views import BuildingsList
+from main.building.views import BuildingsList
 
 def block_residences_list(request):
     filters_form = ResidenceFiltersForm(prefix = 'residences_filters')
@@ -22,7 +22,7 @@ def block_residences_list(request):
 
 class ResidencesList(BuildingsList):
     model                = Residence
-    template_name        = "residence/residences_page.html"
+    template_name        = "building/residence/residences_page.html"
     # paginate_by          = 10
     # default_filter_param = 'all'
     filters_form         = ResidenceFilters

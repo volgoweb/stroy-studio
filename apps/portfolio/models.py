@@ -2,7 +2,7 @@
 from django.db import models
 from autoslug import AutoSlugField
 from django.conf import settings
-from helper.models import *
+from main.helper.models import *
 
 class WorkType(Dictionary):
     '''
@@ -15,12 +15,16 @@ class Portfolio(EntityBaseFields, MainImageField, DescField, DateField):
     Описание выполненной работы.
     '''
 
+    class Meta():
+        verbose_name        = u'Работа из портфолио'
+        verbose_name_plural = u'Работа из портфолио'
+
     work_type = models.ForeignKey(
         WorkType,
         blank        = True,
         null         = True,
         verbose_name = u'Тип работ',
-        related_name = 'portfolio__work_type',
+        related_name = 'portfolio--work_type',
     )
 
     images = models.ManyToManyField(
@@ -28,7 +32,7 @@ class Portfolio(EntityBaseFields, MainImageField, DescField, DateField):
         verbose_name = u'Картинки',
         blank        = True,
         null         = True,
-        related_name = 'portfolio__images',
+        related_name = 'portfolio--images',
     )
 
     project_link = models.URLField(
@@ -45,10 +49,6 @@ class Portfolio(EntityBaseFields, MainImageField, DescField, DateField):
         blank        = True,
         null         = True,
     )
-
-    class Meta():
-        verbose_name = u'Работа из портфолио'
-        verbose_name_plural = u'Работа из портфолио'
 
     def get_absolute_url(self):
         return 'portfolio/{0}'.format(self.slug)

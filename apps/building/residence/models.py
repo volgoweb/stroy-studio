@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from helper.models import Dictionary, Image
-from building.models import *
+from main.building.models import *
 
 class Residence(Building):
     '''

@@ -2,7 +2,7 @@
 from django.db import models
 from autoslug import AutoSlugField
 from django.conf import settings
-from helper.models import *
+from main.helper.models import *
 
 class Page(EntityBaseFields, MainImageField):
     '''
@@ -39,7 +39,7 @@ class Page(EntityBaseFields, MainImageField):
         verbose_name = u'Картинки',
         blank        = True,
         null         = True,
-        related_name = 'page__images',
+        related_name = 'page--images',
     )
 
     class Meta():

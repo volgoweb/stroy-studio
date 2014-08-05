@@ -5,9 +5,9 @@
 {% block content %}
     {% include "building/filters_form__base.html" with filters_form=filters_form %}
 
-    {% include "theme_framework_dk/list/grid/simple.html" with cols=3 item_template="theme_framework_dk/detail/all_centered__img_top.html" items=models list_class="residences" item_class="residences__item" item_head_template="residence/residences-item__head.html" item_body_template="residence/residences-item__body.html" %}
+    {% include "theme_framework_dk/list/list/simple.html" with cols=3 item_template="theme_framework_dk/detail/left_img.html" items=models list_class="buildings" item_class="buildings__item" item_head_template="building/buildings-item__head.html" item_body_template="building/buildings-item__body.html" %}
 
     {% if is_paginated %}
-        {% include "theme_framework_dk/pagination/bootstrap1/pagination.html" with paginator=page_obj%}
+        {% include "theme_framework_dk/pagination/bootstrap_1.html" with paginator=page_obj%}
     {% endif %}
 {% endblock %}
