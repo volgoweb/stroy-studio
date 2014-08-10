@@ -7,16 +7,15 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'core.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', 'main.views.front_page', name='main__front_page'),
     url(r'^buildings/', include('main.building.urls')),
     url(r'^page/', include('main.page.urls')),
     url(r'^portfolio/', include('main.portfolio.urls')),
+    url(r'^callback/', include('main.callback.urls')),
+
+    url(r'^captcha/', include('captcha.urls')),
 )
 
 if settings.DEBUG:

@@ -3,11 +3,9 @@ from django.views.generic.edit import CreateView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from .views import ResidencesList
-
-from views import BuildingsList
+from .views import ResidencesListPage
 
 urlpatterns = patterns('',
-    url(r'^$', ResidencesList.as_view(), name='residence__residences_list_page'),
+    url(r'^$', ResidencesListPage.as_view(), name='residence__residences_list_page'),
 )
 

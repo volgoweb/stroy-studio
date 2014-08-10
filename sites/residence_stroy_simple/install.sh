@@ -2,7 +2,7 @@
 
 python manage.py syncdb
 
-python manage.py migrate --all
+# python manage.py migrate --all
 
 python manage.py loaddata foundation
 python manage.py loaddata construction_type
@@ -12,3 +12,4 @@ python manage.py loaddata building
 python manage.py loaddata residence
 python manage.py loaddata work_type
 python manage.py loaddata portfolio
+python manage.py loaddata callback

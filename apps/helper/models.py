@@ -42,10 +42,52 @@ class Image(models.Model):
     def __unicode__(self):
         return self.image.url
 
+class EntityBaseManager(models.Manager):
+    def active_objects(self):
+        '''
+        Возвращает активные (опубликованные) модели.
+        '''
+        return self.get_queryset().filter(active = True)
+
 class EntityBaseFields(models.Model, FieldsLabelsMixin):
     '''
     Абстрактная модель, содержащая все базовые поля и методы
     для типвоых сущностей сайта (страница, новость, статья, здание и т.д.).
+    '''
+
+    class Meta():
+        abstract = True
+
+    create_date = models.DateTimeField(
+        auto_now_add = True,
+        editable     = False,
+        verbose_name = u'Дата создания',
+    )
+
+    update_date = models.DateTimeField(
+        auto_now     = True,
+        editable     = False,
+        verbose_name = u'Дата создания',
+    )
+
+    active = models.BooleanField(
+        default      = True,
+        verbose_name = u'Активно',
+        help_text    = u'Если не активно, то не будет отображаться на сайте.',
+    )
+
+    objects             = models.Manager()
+    entity_base_manager = EntityBaseManager()
+
+    def __unicode__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return self.slug
+
+class TitleAndSlugFields(models.Model):
+    '''
+    Абстрактная модель для добавления распространенного поля "Заголовка"
     '''
 
     class Meta():
@@ -68,24 +110,6 @@ class EntityBaseFields(models.Model, FieldsLabelsMixin):
         verbose_name  = u'Идентификатор для url',
         help_text     = u'Если оставить пустым, то сгенерируется автоматически.',
     )
-
-    create_date = models.DateTimeField(
-        auto_now_add = True,
-        editable     = False,
-        verbose_name = u'Дата создания',
-    )
-
-    update_date = models.DateTimeField(
-        auto_now     = True,
-        editable     = False,
-        verbose_name = u'Дата создания',
-    )
-
-    def __unicode__(self):
-        return self.title
-
-    def get_absolute_url(self):
-        return self.slug
 
 class MainImageField(models.Model):
     '''

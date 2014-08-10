@@ -5,6 +5,7 @@
     slug: pervaya_rabota
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     desc: Мы сделали невозможное.
     work_type: 1
     main_img: images/no_photo.png
@@ -22,6 +23,7 @@
     slug: vtoraya_rabota
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     desc: Отлично поработали.
     work_type: 1
     main_img: images/no_photo.png
@@ -39,6 +41,7 @@
     slug: tretya_rabota
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     desc: Нас благодарят до сих пор.
     work_type: 2
     main_img: images/no_photo.png

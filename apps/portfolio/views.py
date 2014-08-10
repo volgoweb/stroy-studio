@@ -12,7 +12,7 @@ def portfolio_detail_page(request, slug):
     model = Portfolio.objects.get(slug = slug)
     return render_to_response('page/page.html', {'page': model,}, context_instance = RequestContext(request))
 
-class PortfoliosList(ListView):
+class PortfoliosListPage(ListView):
     model                = Portfolio
     template_name        = "portfolio/portfolios_list_page.html"
     context_object_name  = 'models'
@@ -21,11 +21,11 @@ class PortfoliosList(ListView):
     filters_form         = PortfolioFilters
 
     def __init__(self, *args, **kwargs):
-        super(PortfoliosList, self).__init__(*args, **kwargs)
+        super(PortfoliosListPage, self).__init__(*args, **kwargs)
         self.dk = {}
 
     def get_queryset(self):
-        qs = self.model.objects.all()
+        qs = self.model.entity_base_manager.active_objects()
         # Генерация словаря с фильтрами для queryset согласно полученным GET-параметрам.
         self.define_filters()
         # Фильтрация queryset, сгенерированного ранее методом define_filters().
@@ -60,7 +60,7 @@ class PortfoliosList(ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
-        context = super(PortfoliosList, self).get_context_data(**kwargs)
+        context = super(PortfoliosListPage, self).get_context_data(**kwargs)
         context['filters_form'] = self.filters_form(getattr(self.request, 'GET', None))
 
         context['request'] = self.request

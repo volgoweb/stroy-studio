@@ -3,7 +3,7 @@ from .models import *
 from main.helper.utils import add_pagingation
 from .models import Residence
 from .forms import ResidenceFilters
-from main.building.views import BuildingsList
+from main.building.views import BuildingsListPage
 
 def block_residences_list(request):
     filters_form = ResidenceFiltersForm(prefix = 'residences_filters')
@@ -20,7 +20,7 @@ def block_residences_list(request):
         'labels'        : InfoReason.get_verbose_names(),
     }, context_instance = RequestContext(request))
 
-class ResidencesList(BuildingsList):
+class ResidencesListPage(BuildingsListPage):
     model                = Residence
     template_name        = "building/residence/residences_page.html"
     # paginate_by          = 10
@@ -31,7 +31,7 @@ class ResidencesList(BuildingsList):
         '''
         Генерация словаря с фильтрами для queryset согласно полученным GET-параметрам.
         '''
-        super(ResidencesList, self).define_filters()
+        super(ResidencesListPage, self).define_filters()
 
         filters = self.dk['filters']
         if self.request.GET.get('floors_count'):

@@ -8,6 +8,6 @@
     {% include "theme_framework_dk/list/grid/simple.html" with cols=3 item_template="theme_framework_dk/detail/all_centered__img_top.html" items=models list_class="residences" item_class="residences__item" item_head_template="building/residence/residences-item__head.html" item_body_template="building/residence/residences-item__body.html" %}
 
     {% if is_paginated %}
-        {% include "theme_framework_dk/pagination/bootstrap_1.html" with paginator=page_obj%}
+        {% include "pagination.html" with paginator=page_obj%}
     {% endif %}
 {% endblock %}

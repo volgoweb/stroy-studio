@@ -21,7 +21,7 @@ class RoofCovering(Dictionary):
     '''
     pass
 
-class Building(EntityBaseFields, MainImageField, DescField):
+class Building(EntityBaseFields, TitleAndSlugFields, MainImageField, DescField):
     '''
     Строение.
     Это может быть либо уже готовый дом, гараж, баня,

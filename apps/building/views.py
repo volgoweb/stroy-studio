@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render
 from django.shortcuts import render_to_response
-from django.contrib.admin import site
 from django.template import RequestContext
 from django.http import Http404
 from .models import Building
@@ -27,7 +26,7 @@ def buildings_page(request):
         context_instance = RequestContext(request)
     )
 
-class BuildingsList(ListView):
+class BuildingsListPage(ListView):
     model                = Building
     template_name        = "building/buildings_page.html"
     context_object_name  = 'models'
@@ -36,11 +35,11 @@ class BuildingsList(ListView):
     filters_form         = BuildingFilters
 
     def __init__(self, *args, **kwargs):
-        super(BuildingsList, self).__init__(*args, **kwargs)
+        super(BuildingsListPage, self).__init__(*args, **kwargs)
         self.dk = {}
 
     def get_queryset(self):
-        qs = self.model.objects.all()
+        qs = self.model.entity_base_manager.active_objects()
         # Генерация словаря с фильтрами для queryset согласно полученным GET-параметрам.
         self.define_filters()
         # Фильтрация queryset, сгенерированного ранее методом define_filters().
@@ -75,7 +74,7 @@ class BuildingsList(ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
-        context = super(BuildingsList, self).get_context_data(**kwargs)
+        context = super(BuildingsListPage, self).get_context_data(**kwargs)
         context['filters_form'] = self.filters_form(getattr(self.request, 'GET', None))
 
         context['request'] = self.request

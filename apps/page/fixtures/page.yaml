@@ -5,6 +5,7 @@
     slug: about
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     body: Полный текст страницы о компании.
 
 - model: page.page
@@ -14,4 +15,5 @@
     slug: contacts
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     body: Полный текст страницы контактов.

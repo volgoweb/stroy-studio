@@ -4,7 +4,7 @@ from autoslug import AutoSlugField
 from django.conf import settings
 from main.helper.models import *
 
-class Page(EntityBaseFields, MainImageField):
+class Page(EntityBaseFields, TitleAndSlugFields, MainImageField):
     '''
     Любая статическая страница сайта.
     '''

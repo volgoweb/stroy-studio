@@ -1,6 +1,6 @@
 {# Весь основной контент элемента сетки списка домов. #}
 
-<div class="residence-item__body">
+<div class="item__body residence-item__body">
     {% include "theme_framework_dk/field/classic.html" with label="Площадь"  value=item.get_total_area_with_measure %}
     {% include "theme_framework_dk/field/classic.html" with label="Габариты" value=item.get_dimensions %}
     {% include "theme_framework_dk/field/classic.html" with label="Цена"     value=item.get_price_with_measure %}

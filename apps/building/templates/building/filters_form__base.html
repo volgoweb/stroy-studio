@@ -3,66 +3,66 @@
     <form class="filters-form" method="GET" accept-charset="utf-8">
         {# TODO вынести в отдельный шаблон одинаковый код #}
         {% block filters_form_fields %}
-            <div class="filters-form__item">
-                <label class="filters-form-item__label">{{ filters_form.foundation.label }}:</label>
-                <span class="filters-form-item__field">{{ filters_form.foundation }}</span>
-            </div>
-            <div class="filters-form__item">
-                <label class="filters-form-item__label">{{ filters_form.construction_type.label }}:</label>
-                <span class="filters-form-item__field">{{ filters_form.construction_type }}</span>
-            </div>
-            <div class="filters-form__item">
-                <label class="filters-form-item__label">{{ filters_form.roof_covering.label }}:</label>
-                <span class="filters-form-item__field">{{ filters_form.roof_covering }}</span>
-            </div>
+            <div class="container">
+                <div class="col-sm-12 col-sm-6 col-md-6 col-lg-6">
+                    {% include "theme_framework_dk/field/div_table_row.html" with field_classes_common="filters-form__item" field_class_personal="filters-form__foundation" label=filters_form.foundation.label value=filters_form.foundation %}
 
-            <div class="filters-form__fieldset">
-                <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.total_area }}:</label>
-                <div class="filters-form__item inline-item">
-                    <label class="filters-form-item__label">{{ filters_form.total_area_lt.label }}</label>
-                    <span class="filters-form-item__field">{{ filters_form.total_area_lt }}</span>
-                </div>
-                <div class="filters-form__item inline-item">
-                    <label class="filters-form-item__label">{{ filters_form.total_area_gt.label }}</label>
-                    <span class="filters-form-item__field">{{ filters_form.total_area_gt }}</span>
-                </div>
-            </div>
-            
-            {% comment %}
-                <div class="filters-form__fieldset">
-                    <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.length }}:</label>
-                    <div class="filters-form__item inline-item">
-                        <label class="filters-form-item__label">{{ filters_form.length_lt.label }}</label>
-                        <span class="filters-form-item__field">{{ filters_form.length_lt }}</span>
+                    {% include "theme_framework_dk/field/div_table_row.html" with field_classes_common="filters-form__item" field_class_personal="filters-form__foundation" label=filters_form.construction_type.label value=filters_form.construction_type %}
+
+                    {% include "theme_framework_dk/field/div_table_row.html" with field_classes_common="filters-form__item" field_class_personal="filters-form__roof-covering" label=filters_form.roof_covering.label value=filters_form.roof_covering %}
+
+                    {% include "theme_framework_dk/field/div_table_row__range.html" with field_classes_common="filters-form__item" field_class_personal="filters-form__total-area" label=filters_form.model_fields_verbose_names.total_area label1=filters_form.total_area_lt.label value1=filters_form.total_area_lt label2=filters_form.total_area_gt.label value2=filters_form.total_area_gt %}
+                    <div class="filters-form__fieldset">
+                        <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.total_area }}:</label>
+                        <div class="filters-form__item inline-item">
+                            <label class="filters-form-item__label">{{ filters_form.total_area_lt.label }}</label>
+                            <span class="filters-form-item__field">{{ filters_form.total_area_lt }}</span>
+                        </div>
+                        <div class="filters-form__item inline-item">
+                            <label class="filters-form-item__label">{{ filters_form.total_area_gt.label }}</label>
+                            <span class="filters-form-item__field">{{ filters_form.total_area_gt }}</span>
+                        </div>
                     </div>
-                    <div class="filters-form__item inline-item">
-                        <label class="filters-form-item__label">{{ filters_form.length_gt.label }}</label>
-                        <span class="filters-form-item__field">{{ filters_form.length_gt }}</span>
-                    </div>
+                    
+                    {% comment %}
+                        <div class="filters-form__fieldset">
+                            <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.length }}:</label>
+                            <div class="filters-form__item inline-item">
+                                <label class="filters-form-item__label">{{ filters_form.length_lt.label }}</label>
+                                <span class="filters-form-item__field">{{ filters_form.length_lt }}</span>
+                            </div>
+                            <div class="filters-form__item inline-item">
+                                <label class="filters-form-item__label">{{ filters_form.length_gt.label }}</label>
+                                <span class="filters-form-item__field">{{ filters_form.length_gt }}</span>
+                            </div>
+                        </div>
+
+                        <div class="filters-form__fieldset">
+                            <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.width }}:</label>
+                            <div class="filters-form__item inline-item">
+                                <label class="filters-form-item__label">{{ filters_form.width_lt.label }}</label>
+                                <span class="filters-form-item__field">{{ filters_form.width_lt }}</span>
+                            </div>
+                            <div class="filters-form__item inline-item">
+                                <label class="filters-form-item__label">{{ filters_form.width_gt.label }}</label>
+                                <span class="filters-form-item__field">{{ filters_form.width_gt }}</span>
+                            </div>
+                        </div>
+                    {% endcomment %}
                 </div>
 
-                <div class="filters-form__fieldset">
-                    <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.width }}:</label>
-                    <div class="filters-form__item inline-item">
-                        <label class="filters-form-item__label">{{ filters_form.width_lt.label }}</label>
-                        <span class="filters-form-item__field">{{ filters_form.width_lt }}</span>
+                <div class="col-sm-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="filters-form__fieldset">
+                        <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.price }}:</label>
+                        <div class="filters-form__item inline-item">
+                            <label class="filters-form-item__label">{{ filters_form.price_lt.label }}</label>
+                            <span class="filters-form-item__field">{{ filters_form.price_lt }}</span>
+                        </div>
+                        <div class="filters-form__item inline-item">
+                            <label class="filters-form-item__label">{{ filters_form.price_gt.label }}</label>
+                            <span class="filters-form-item__field">{{ filters_form.price_gt }}</span>
+                        </div>
                     </div>
-                    <div class="filters-form__item inline-item">
-                        <label class="filters-form-item__label">{{ filters_form.width_gt.label }}</label>
-                        <span class="filters-form-item__field">{{ filters_form.width_gt }}</span>
-                    </div>
-                </div>
-            {% endcomment %}
-
-            <div class="filters-form__fieldset">
-                <label class="filters-form-fieldset__label">{{ filters_form.model_fields_verbose_names.price }}:</label>
-                <div class="filters-form__item inline-item">
-                    <label class="filters-form-item__label">{{ filters_form.price_lt.label }}</label>
-                    <span class="filters-form-item__field">{{ filters_form.price_lt }}</span>
-                </div>
-                <div class="filters-form__item inline-item">
-                    <label class="filters-form-item__label">{{ filters_form.price_gt.label }}</label>
-                    <span class="filters-form-item__field">{{ filters_form.price_gt }}</span>
                 </div>
             </div>
         {% endblock %}

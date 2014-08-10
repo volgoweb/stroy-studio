@@ -10,7 +10,7 @@ class WorkType(Dictionary):
     '''
     pass
 
-class Portfolio(EntityBaseFields, MainImageField, DescField, DateField):
+class Portfolio(EntityBaseFields, TitleAndSlugFields, MainImageField, DescField, DateField):
     '''
     Описание выполненной работы.
     '''

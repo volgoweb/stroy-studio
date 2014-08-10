@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_title %}Отзывы{% endblock %}
+
+{% block content %}
+
+    <div class="add-callback-container">
+        <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#add-callback">Оставить отзыв</button>
+        <div id="add-callback" class="collapse">
+            <form action="{% url "callback__add_callback" %}" method="POST" accept-charset="utf-8">
+                {{ add_callback_form.as_p }}
+                <input type="submit" value="Сохранить"/>
+            </form>
+            {{ add_form }}
+        </div>
+    </div>
+    {% include "theme_framework_dk/list/list/simple.html" with cols=3 item_template="theme_framework_dk/detail/simple.html" items=models list_class="callbacks" item_class="callbacks__item" item_head_template="callback/callbacks-item__head.html" item_body_template="callback/callbacks-item__body.html" %}
+
+    {% if is_paginated %}
+        {% include "pagination.html" with paginator=page_obj%}
+    {% endif %}
+{% endblock %}
+

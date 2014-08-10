@@ -4,6 +4,7 @@
     title: Кирпичный дом
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     desc: Описание дома
     main_img: images/kirpichniy_dom.jpg
     construction_type: brick
@@ -25,6 +26,7 @@
     title: Каркасный дом
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     desc: Описание дома
     main_img: images/karkasniy_dom.jpg
     construction_type: frame
@@ -46,6 +48,7 @@
     title: Дом из бруса
     create_date: 2014-07-31 09:00:00
     update_date: 2014-07-31 09:00:00
+    active: 1
     desc: Описание дома
     main_img: images/dom_from_brus.jpg
     construction_type: timber
