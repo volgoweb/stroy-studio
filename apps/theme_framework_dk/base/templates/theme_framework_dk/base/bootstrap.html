@@ -1,6 +1,7 @@
 {% load staticfiles %}
 {% load compress %}
 {% load admin_static %}
+{% load helper %}
 
 <html>
     <head>
@@ -21,6 +22,9 @@
             <script type="text/javascript" src="{% static 'bootstrap/js/dropdown.js' %}"></script>
 
             <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+            {% main_global_js_var %}
+            {% js_constants %}
         {% endblock %}
         
     </head>

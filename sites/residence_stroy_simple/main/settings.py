@@ -67,6 +67,7 @@ INSTALLED_APPS = (
     'main.page',
     'main.portfolio',
     'main.callback',
+    'main.contact',
 )
 
 MIDDLEWARE_CLASSES = (
